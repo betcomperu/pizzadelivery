@@ -9,7 +9,7 @@ class Home extends BaseController
     public function index()
     {
         $data = [
-            'titulo'=>'| Area restringida',
+            'titulo'=>'Area restringida',
         ];
 
         return view('Admin/Home/index', $data);
