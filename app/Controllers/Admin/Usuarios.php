@@ -37,9 +37,7 @@ class Usuarios extends BaseController
             'titulo'=> "Detalle del Usuario $usuarios->nombre",
         ];
 
-       
-       
-        return view('Admin/Usuarios/show', $data);
+         return view('Admin/Usuarios/show', $data);
 
 
     }
