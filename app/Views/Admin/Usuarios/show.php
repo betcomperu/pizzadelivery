@@ -72,9 +72,9 @@
                   <?php echo $usuarios->fecha_edit->humanize(); ?>
                 </p>
                 
-                <a href="<?php echo site_url("admin/usuarios/edit/$usuarios->id");?>" class="btn btn-dark btn-sm"><ion-icon name="create-outline"></ion-icon> Editar</a>
-                <a href="<?php echo site_url("admin/usuarios/excluir/$usuarios->id");?>" class="btn btn-danger btn-sm">Desactivar</a>
-                <a href="<?php echo site_url("admin/usuarios");?>" class="btn btn-warning btn-sm">Atras</a>
+                <a href="<?php echo site_url("admin/usuarios/edit/$usuarios->id");?>" class="btn btn-dark btn-sm"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+                <a href="<?php echo site_url("admin/usuarios/excluir/$usuarios->id");?>" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash-can"></i> Desactivar</a>
+                <a href="<?php echo site_url("admin/usuarios");?>" class="btn btn-warning btn-sm"><i class="fa-solid fa-backward"></i> Atras</a>
               </div>
            
             </div>

@@ -34,7 +34,7 @@
   <!-- Aqui se agregarará estilos propios-->
   <?php echo $this->renderSection('miestilos'); ?>
    <!-- Aqui se agregarará estilos propios-->
-   
+   <script src="https://kit.fontawesome.com/7b74cd4377.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -423,7 +423,7 @@
 </script>
 <!-- iCON IO -->
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
 
 </html>

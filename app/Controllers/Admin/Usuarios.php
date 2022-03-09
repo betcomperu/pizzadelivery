@@ -41,4 +41,18 @@ class Usuarios extends BaseController
 
 
     }
+    public function edit($id = null)
+    {
+        $usuarios = new UsuarioModel();
+
+        $data = [
+            
+            'usuarios'=> $usuarios->select('*')->find($id),
+            'titulo'=> "Editar Usuario $usuarios->nombre",
+        ];
+
+         return view('Admin/Usuarios/edit', $data);
+
+
+    }
 }
