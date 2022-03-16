@@ -24,7 +24,6 @@
 <?php echo $this->section('contenido'); ?>
 
 
-
 <!-- /.col -->
 <div class="col-md-6">
             <div class="card card-success">
@@ -65,11 +64,11 @@
                 </p>
                 <p class="card-text">
                   <span class="font-weight-bold">Creado: </span>
-                  <?php echo $usuarios->fecha_alta->humanize(); ?>
+                  <?php echo $usuarios->fecha_alta; ?>
                 </p>
                 <p class="card-text">
                   <span class="font-weight-bold">Actualizado: </span>
-                  <?php echo $usuarios->fecha_edit->humanize(); ?>
+                  <?php echo $usuarios->fecha_edit; ?>
                 </p>
                 
                 <a href="<?php echo site_url("admin/usuarios/edit/$usuarios->id");?>" class="btn btn-dark btn-sm"><i class="fa-solid fa-pen-to-square"></i> Editar</a>

@@ -26,15 +26,15 @@
   <link rel="stylesheet" href="<?php echo site_url('admin/') ?>plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="<?php echo site_url('admin/') ?>plugins/summernote/summernote-bs4.min.css">
-    <!-- DataTables -->
+  <!-- DataTables -->
   <link rel="stylesheet" href="<?php echo site_url('admin/') ?>plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="<?php echo site_url('admin/') ?>plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="<?php echo site_url('admin/') ?>plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
   <!-- Aqui se agregarará estilos propios-->
   <?php echo $this->renderSection('miestilos'); ?>
-   <!-- Aqui se agregarará estilos propios-->
-   <script src="https://kit.fontawesome.com/7b74cd4377.js" crossorigin="anonymous"></script>
+  <!-- Aqui se agregarará estilos propios-->
+  <script src="https://kit.fontawesome.com/7b74cd4377.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -188,7 +188,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="index3.html" class="brand-link">
-        <img src="<?php echo site_url('admin/')?>dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="<?php echo site_url('admin/') ?>dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">AdminLTE 3</span>
       </a>
 
@@ -197,7 +197,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-            <img src="<?php echo site_url('admin/')?>dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+            <img src="<?php echo site_url('admin/') ?>dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
             <a href="#" class="d-block">Alexander Pierce</a>
@@ -222,7 +222,7 @@
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-  
+
             <li class="nav-header">EXAMPLES</li>
             <li class="nav-item">
               <a href="pages/calendar.html" class="nav-link">
@@ -249,7 +249,7 @@
                 </p>
               </a>
             </li>
-  
+
 
             <li class="nav-item">
               <a href="#" class="nav-link">
@@ -274,8 +274,8 @@
                 </li>
               </ul>
             </li>
-            
-  
+
+
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="fas fa-circle nav-icon"></i>
@@ -327,28 +327,57 @@
         </div><!-- /.container-fluid -->
       </div>
       <!-- /.content-header -->
- 
+
+
+
       <!-- Main content -->
       <section class="content">
         <!-- Aqui se agregarará contenidos propios-->
-        <?php echo $this->renderSection('contenido'); ?>
-      </section>
-      <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-      <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-      All rights reserved.
-      <div class="float-right d-none d-sm-inline-block">
-        <b>Version</b> 3.2.0
-      </div>
-    </footer>
+        <?php if (session()->has('suceso')) : ?>
+          <div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h5><i class="icon fas fa-check"></i> Perfecto! <?php echo session('suceso'); ?></h5>
+            
+           </div>
+        <?php endif; ?>
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
+        <?php if (session()->has('info')) : ?>
+          <div class="alert alert-info alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h5><i class="icon fas fa-check"></i> Información! <?php echo session('info'); ?></h5>
+            </div>
+        <?php endif; ?>
+
+        <?php if (session()->has('atencion')) : ?>
+          <div class="alert alert-warning alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h5><i class="icon fas fa-check"></i> Atencion! <?php echo session('atencion'); ?></h5>
+           </div>
+        <?php endif; ?>
+        <?php if (session()->has('error')) : ?>
+          <div class="alert alert-warning alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h5><i class="icon fas fa-check"></i> Error! <?php echo session('error'); ?> </h5>
+          </div>
+        <?php endif; ?>
+  <?php echo $this->renderSection('contenido'); ?>
+  </section>
+  <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 3.2.0
+    </div>
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
   </div>
   <!-- ./wrapper -->
 
@@ -383,46 +412,48 @@
   <!-- AdminLTE App -->
   <script src="<?php echo site_url('admin/') ?>dist/js/adminlte.js"></script>
   <!-- AdminLTE for demo purposes -->
- <!-- <script src="<?php echo site_url('admin/') ?>dist/js/demo.js"></script>-->
+  <!-- <script src="<?php echo site_url('admin/') ?>dist/js/demo.js"></script>-->
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="<?php echo site_url('admin/') ?>dist/js/pages/dashboard.js"></script>
   <!-- DataTables  & Plugins -->
-<script src="<?php echo site_url('admin/') ?>plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="<?php echo site_url('admin/') ?>plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="<?php echo site_url('admin/') ?>plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="<?php echo site_url('admin/') ?>plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="<?php echo site_url('admin/') ?>plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="<?php echo site_url('admin/') ?>plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="<?php echo site_url('admin/') ?>plugins/jszip/jszip.min.js"></script>
-<script src="<?php echo site_url('admin/') ?>plugins/pdfmake/pdfmake.min.js"></script>
-<script src="<?php echo site_url('admin/') ?>plugins/pdfmake/vfs_fonts.js"></script>
-<script src="<?php echo site_url('admin/') ?>plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-<script src="<?php echo site_url('admin/') ?>plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="<?php echo site_url('admin/') ?>plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+  <script src="<?php echo site_url('admin/') ?>plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="<?php echo site_url('admin/') ?>plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="<?php echo site_url('admin/') ?>plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+  <script src="<?php echo site_url('admin/') ?>plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+  <script src="<?php echo site_url('admin/') ?>plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+  <script src="<?php echo site_url('admin/') ?>plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+  <script src="<?php echo site_url('admin/') ?>plugins/jszip/jszip.min.js"></script>
+  <script src="<?php echo site_url('admin/') ?>plugins/pdfmake/pdfmake.min.js"></script>
+  <script src="<?php echo site_url('admin/') ?>plugins/pdfmake/vfs_fonts.js"></script>
+  <script src="<?php echo site_url('admin/') ?>plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+  <script src="<?php echo site_url('admin/') ?>plugins/datatables-buttons/js/buttons.print.min.js"></script>
+  <script src="<?php echo site_url('admin/') ?>plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
   <!-- Aqui se agregarará scripts propios-->
   <?php echo $this->renderSection('scripts'); ?>
 
   <!-- Page specific script -->
-<script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
+  <script>
+    $(function() {
+      $("#example1").DataTable({
+        "responsive": true,
+        "lengthChange": false,
+        "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+      $('#example2').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false,
+        "responsive": true,
+      });
     });
-  });
-</script>
-<!-- iCON IO -->
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  </script>
+  <!-- iCON IO -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 
 </body>
 
