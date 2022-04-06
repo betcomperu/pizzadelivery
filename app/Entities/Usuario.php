@@ -6,7 +6,16 @@ use CodeIgniter\Entity\Entity;
 
 class Usuario extends Entity
 {
-   
-    protected $dates   = ['fecha_alta', 'fecha_edit', 'fecha_delete'];
+    protected $attributes = [
+        'id' => "",
+        'nombre' => "",
+        'email' => "",
+        'Dni_Ruc' => "",
+        'telefono' => "" ,
+        'password_hash' => "", 
+        'activacion_hash' => ""
+    ];
+
+    protected $dates = ['fecha_alta', 'fecha_edit', 'fecha_delete'];
    
 }
